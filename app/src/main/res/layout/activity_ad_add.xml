@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdAddActivity">
+
+    <ImageView
+        android:id="@+id/imageViewAnnonce"
+        android:layout_width="254dp"
+        android:layout_height="159dp"
+        app:srcCompat="@drawable/toiture1"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="81dp" />
+
+    <EditText
+        android:id="@+id/editTextTitre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Titre"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewAnnonce"
+        tools:layout_editor_absoluteX="100dp" />
+
+    <EditText
+        android:id="@+id/editTextAdresse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Adresse"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTitre"
+        tools:layout_editor_absoluteX="100dp" />
+
+    <Button
+        android:id="@+id/buttonValider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Valider"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAdresse"
+        tools:layout_editor_absoluteX="157dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
