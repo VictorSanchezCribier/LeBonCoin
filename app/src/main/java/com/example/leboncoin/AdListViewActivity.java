@@ -20,7 +20,7 @@ import androidx.cardview.widget.CardView;
 
 
 
-public class AdListViewActivity extends AppCompatActivity implements RecyclerViewAdAdapter.OnItemClickListener {
+public class AdListViewActivity extends AppCompatActivity {
     ArrayList<AdModel> modeles = new ArrayList();
     AdModel modele1 = new AdModel("Tuiles", "Rue du grand bail",R.drawable.toiture1);
     AdModel modele2 = new AdModel("Tuiles2", "Rue du grand bail",R.drawable.toiture1);
@@ -31,6 +31,7 @@ public class AdListViewActivity extends AppCompatActivity implements RecyclerVie
         setContentView(R.layout.activity_ad_list_view);
         modeles.add(modele1);
         modeles.add(modele2);
+
 
         RecyclerViewAdAdapter adapter = new RecyclerViewAdAdapter(this, modeles);
         RecyclerView recyclerView = findViewById(R.id.adRecyclerView);
@@ -47,10 +48,12 @@ public class AdListViewActivity extends AppCompatActivity implements RecyclerVie
 
     }
 
-    @Override
+  /*  @Override
     public void onItemClick(AdModel ad) {
         Intent intent = new Intent(this, AdViewActivity.class);
         intent.putExtra("ad", ad);
         startActivity(intent);
     }
+*/
+
 }

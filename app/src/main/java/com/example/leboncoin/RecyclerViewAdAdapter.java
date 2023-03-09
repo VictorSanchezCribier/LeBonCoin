@@ -2,6 +2,7 @@ package com.example.leboncoin;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +25,7 @@ public class RecyclerViewAdAdapter extends
         this.data = modeles;
     }
 
-    public RecyclerViewAdAdapter(List<AdModel> data) {this.data = data;}
+    public RecyclerViewAdAdapter(AdListViewActivity adListViewActivity, List<AdModel> data) {this.data = data;}
     @NonNull
     @Override
     public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -46,6 +47,7 @@ public class RecyclerViewAdAdapter extends
 
                 Intent intent = new Intent(context, AdViewActivity.class);
                 intent.putExtra("ad", ad);
+                Log.d("cliqué", String.valueOf(data.get(0)));
 
                 context.startActivity(intent);
             }

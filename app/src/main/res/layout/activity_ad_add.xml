@@ -20,7 +20,6 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Titre"
         app:layout_constraintTop_toBottomOf="@+id/imageViewAnnonce"
         tools:layout_editor_absoluteX="100dp" />
 
@@ -30,7 +29,6 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Adresse"
         app:layout_constraintTop_toBottomOf="@+id/editTextTitre"
         tools:layout_editor_absoluteX="100dp" />
 
