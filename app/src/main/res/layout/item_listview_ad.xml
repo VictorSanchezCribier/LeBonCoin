@@ -5,28 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="254dp"
-        android:layout_height="162dp"
-        app:srcCompat="@drawable/toiture1"
-        tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="7dp" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="347dp"
+        android:layout_height="357dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-1dp" >
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="135dp"
-        android:layout_height="36dp"
-        android:text="TextView"
-        android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        tools:layout_editor_absoluteY="36dp" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="318dp"
+            android:layout_height="201dp"
+            app:srcCompat="@drawable/toiture1" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="118dp"
-        android:layout_height="50dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="201dp"
+            android:layout_height="41dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="208dp"
+            android:layout_height="69dp"
+            android:text="TextView" />
+
+    </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

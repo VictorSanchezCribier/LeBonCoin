@@ -2,16 +2,21 @@ package com.example.leboncoin;
 
 import androidx.annotation.DrawableRes;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
+import androidx.cardview.widget.CardView;
+
 
 
 public class AdListViewActivity extends AppCompatActivity {
@@ -26,10 +31,11 @@ public class AdListViewActivity extends AppCompatActivity {
         modeles.add(modele1);
         modeles.add(modele2);
 
-        AdAdapter adapter = new AdAdapter(this, modeles);
-        ListView vue = (ListView) findViewById(R.id.adListView);
-        vue.setAdapter(adapter);
-        vue.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        RecyclerViewAdAdapter adapter = new RecyclerViewAdAdapter(this, modeles);
+        RecyclerView recyclerView = findViewById(R.id.adRecyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+       /* recyclerView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View vue, int position, long l) {
                 AdModel selectedModel = (AdModel) adapter.getItemAtPosition(position);
@@ -38,7 +44,7 @@ public class AdListViewActivity extends AppCompatActivity {
                 startActivity(intentAdView);
             }
         });
-
+*/
         Intent intentAdAdd = getIntent();
         if (intentAdAdd.hasExtra("nouvelleAnnonce")) {
             AdModel nouvelleAnnonce = (AdModel) intentAdAdd.getSerializableExtra("nouvelleAnnonce");
