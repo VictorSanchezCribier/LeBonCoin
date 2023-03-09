@@ -1,5 +1,7 @@
 package com.example.leboncoin;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,12 +11,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerViewAdAdapter extends
         RecyclerView.Adapter<RecyclerViewAdAdapter.RecyclerViewHolder>{
     private List<AdModel> data;
-    public RecyclerViewAdAdapter(AdListViewActivity adListViewActivity, List<AdModel> data) {this.data = data;}
+    private Context context;
+
+    public void AdAdapter(Context context, ArrayList<AdModel> modeles) {
+        this.context = context;
+        this.data = modeles;
+    }
+
+    public RecyclerViewAdAdapter(List<AdModel> data) {this.data = data;}
     @NonNull
     @Override
     public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -25,11 +35,21 @@ public class RecyclerViewAdAdapter extends
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder, int position) {
 // This method is called for each of the visible rows displayed in our RecyclerView. It is
-  //      usually here that we update their appearance.
+       // usually here that we update their appearance.
         AdModel ad = data.get(position);
         holder.titleTextView.setText(ad.getTitle());
         holder.addressTextView.setText(ad.getAddress());
         holder.imageView.setImageResource(ad.getImage());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(context, AdViewActivity.class);
+                intent.putExtra("ad", ad);
+
+                context.startActivity(intent);
+            }
+        });
     }
     @Override
     public int getItemCount() {return data.size();}
@@ -45,4 +65,3 @@ public class RecyclerViewAdAdapter extends
         }
     }
 }
-
