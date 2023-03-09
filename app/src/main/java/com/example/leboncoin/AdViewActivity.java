@@ -19,7 +19,7 @@ public class AdViewActivity extends AppCompatActivity {
         TextView titre = (TextView) findViewById(R.id.textViewAd);
         TextView adresse = (TextView) findViewById(R.id.textViewAd2);
         Intent intentAdView = getIntent();
-        AdModel selectedModel = (AdModel) intentAdView.getSerializableExtra("selectedModel");
+        AdModel selectedModel = (AdModel) intentAdView.getSerializableExtra("model");
         titre.setText(selectedModel.getTitle());
         adresse.setText(selectedModel.getAddress());
         image.setImageResource(selectedModel.getImage());

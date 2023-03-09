@@ -1,5 +1,7 @@
 package com.example.leboncoin;
 
+
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -21,15 +23,11 @@ public class AdAddActivity extends AppCompatActivity {
         EditText titre = (EditText) findViewById(R.id.editTextTitre);
         EditText adresse = (EditText) findViewById(R.id.editTextAdresse);
         ImageView image = (ImageView) findViewById(R.id.imageViewAnnonce);
+
         Button valider = (Button) findViewById(R.id.buttonValider);
         String contenuTitre = String.valueOf(titre.getText());
         String contenuAdresse = String.valueOf(adresse.getText());
 
-        while(contenuTitre.length()<1||contenuAdresse.length()<1){
-            valider.setEnabled(false);
-            contenuTitre = String.valueOf(titre.getText());
-            contenuAdresse = String.valueOf(adresse.getText());
-        }
 
 
         valider.setOnClickListener(new View.OnClickListener() {

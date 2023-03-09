@@ -2,7 +2,6 @@ package com.example.leboncoin;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,20 +11,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import com.google.android.material.imageview.ShapeableImageView;
+
 import java.util.List;
 
-public class RecyclerViewAdAdapter extends
-        RecyclerView.Adapter<RecyclerViewAdAdapter.RecyclerViewHolder>{
+public class RecyclerViewAdAdapter extends RecyclerView.Adapter<RecyclerViewAdAdapter.RecyclerViewHolder>{
     private List<AdModel> data;
-    private Context context;
-
-    public void AdAdapter(Context context, ArrayList<AdModel> modeles) {
+    private final Context context;
+    public RecyclerViewAdAdapter(Context context, List<AdModel> data) {
+        this.data = data;
         this.context = context;
-        this.data = modeles;
     }
-
-    public RecyclerViewAdAdapter(AdListViewActivity adListViewActivity, List<AdModel> data) {this.data = data;}
     @NonNull
     @Override
     public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -35,21 +31,18 @@ public class RecyclerViewAdAdapter extends
     }
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder, int position) {
-// This method is called for each of the visible rows displayed in our RecyclerView. It is
-       // usually here that we update their appearance.
+// This method is called for each of the visible rows displayed in our RecyclerView.
+// It is usually here that we update their appearance.
         AdModel ad = data.get(position);
         holder.titleTextView.setText(ad.getTitle());
         holder.addressTextView.setText(ad.getAddress());
         holder.imageView.setImageResource(ad.getImage());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(context, AdViewActivity.class);
-                intent.putExtra("ad", ad);
-                Log.d("cliqué", String.valueOf(data.get(0)));
-
-                context.startActivity(intent);
+            public void onClick(View view) {
+                Intent goAdViewActivity = new Intent(context, AdViewActivity.class);
+                goAdViewActivity.putExtra("model", ad);
+                context.startActivity(goAdViewActivity);
             }
         });
     }

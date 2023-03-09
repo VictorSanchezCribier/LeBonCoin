@@ -40,7 +40,7 @@ public class AdListViewActivity extends AppCompatActivity {
 
 
 
-        Intent intentAdAdd = getIntent();
+       Intent intentAdAdd = getIntent();
         if (intentAdAdd.hasExtra("nouvelleAnnonce")) {
             AdModel nouvelleAnnonce = (AdModel) intentAdAdd.getSerializableExtra("nouvelleAnnonce");
             modeles.add(nouvelleAnnonce);
@@ -48,7 +48,7 @@ public class AdListViewActivity extends AppCompatActivity {
 
     }
 
-  /*  @Override
+   /* @Override
     public void onItemClick(AdModel ad) {
         Intent intent = new Intent(this, AdViewActivity.class);
         intent.putExtra("ad", ad);
