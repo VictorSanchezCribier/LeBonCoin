@@ -10,7 +10,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
-        app:cardCornerRadius="10dp"
+        app:cardCornerRadius="11dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-1dp">
 
@@ -40,7 +40,7 @@
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="208dp"
-                android:layout_height="69dp"
+                android:layout_height="wrap_content"
                 android:text="TextView" />
 
             <TextView
