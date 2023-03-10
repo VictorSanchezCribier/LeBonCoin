@@ -6,13 +6,22 @@ public class AdModel implements Serializable {
     private String title;
     private String address;
     private int image;
+
+    private String prix;
     // Constructor
-    public AdModel(String title, String address, int image) {
+    public AdModel(String title, String address, int image, String prix) {
         this.title = title;
         this.address = address;
         this.image = image;
+        this.prix = prix;
     }
     // Getter and Setter
+    public String getPrix(){
+        return prix;
+    }
+    public void setPrix(String prix){
+        this.prix = prix;
+    }
     public String getTitle() {
         return title;
     }

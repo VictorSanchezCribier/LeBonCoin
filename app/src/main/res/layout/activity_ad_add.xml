@@ -39,9 +39,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Valider"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAdresse"
-        tools:layout_editor_absoluteX="157dp" />
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAjoutPrix"
+        tools:layout_editor_absoluteX="140dp" />
 
+    <EditText
+        android:id="@+id/editTextAjoutPrix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="Prix"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAdresse"
+        tools:layout_editor_absoluteX="100dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

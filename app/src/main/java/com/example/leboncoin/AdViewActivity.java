@@ -18,10 +18,16 @@ public class AdViewActivity extends AppCompatActivity {
         ImageView image = (ImageView) findViewById(R.id.imageViewAd);
         TextView titre = (TextView) findViewById(R.id.textViewAd);
         TextView adresse = (TextView) findViewById(R.id.textViewAd2);
+        TextView prix = (TextView) findViewById(R.id.textViewPrixDetail);
+
         Intent intentAdView = getIntent();
         AdModel selectedModel = (AdModel) intentAdView.getSerializableExtra("model");
-        titre.setText(selectedModel.getTitle());
-        adresse.setText(selectedModel.getAddress());
+        String contenuTitre = "     produit : "+selectedModel.getTitle();
+        String contenuAdresse = "     adresse : "+selectedModel.getAddress();
+        String contenuPrix = "      prix : "+selectedModel.getPrix();
+        titre.setText(contenuTitre);
+        adresse.setText(contenuAdresse);
         image.setImageResource(selectedModel.getImage());
+        prix.setText(contenuPrix);
     }
 }

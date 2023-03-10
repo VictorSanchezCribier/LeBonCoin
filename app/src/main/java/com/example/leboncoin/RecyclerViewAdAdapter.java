@@ -37,6 +37,7 @@ public class RecyclerViewAdAdapter extends RecyclerView.Adapter<RecyclerViewAdAd
         holder.titleTextView.setText(ad.getTitle());
         holder.addressTextView.setText(ad.getAddress());
         holder.imageView.setImageResource(ad.getImage());
+        holder.prixTextView.setText(ad.getPrix());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,11 +53,13 @@ public class RecyclerViewAdAdapter extends RecyclerView.Adapter<RecyclerViewAdAd
         public final ImageView imageView;
         public final TextView titleTextView;
         public final TextView addressTextView;
+        public final TextView prixTextView;
         public RecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.imageView);
             titleTextView = itemView.findViewById(R.id.textView);
             addressTextView = itemView.findViewById(R.id.textView2);
+            prixTextView = itemView.findViewById(R.id.textViewPrix);
         }
     }
 }
